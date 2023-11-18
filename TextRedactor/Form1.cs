@@ -50,5 +50,42 @@ namespace TextRedactor
         {
             this.Close();
         }
+
+        private void отменитьCtrlZToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Undo();
+            }
+        }
+
+        private void вставитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Paste();
+            }
+        }
+
+        private void копироватьCtrlVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(textBox1.TextLength > 0)
+            {
+                textBox1.Copy();
+            }
+        }
+
+        private void вырезатьCtrlСToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Cut();
+            }
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Клон блокнота на WinForms, сделанный на Учебной Практике", "Упссс");
+        }
     }
 }
